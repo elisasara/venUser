@@ -1,0 +1,27 @@
+{
+  "name": "venuser",
+  "version": "1.0.0",
+  "description": "Venue Reviews and Tips",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elisasara/venUser.git"
+  },
+  "author": "Elisa Urda, Judie Tran, Michael Borrasso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elisasara/venUser/issues"
+  },
+  "homepage": "https://github.com/elisasara/venUser#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.3",
+    "sequelize": "^4.37.7"
+  }
+}
