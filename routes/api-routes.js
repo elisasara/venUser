@@ -21,8 +21,6 @@ module.exports = function(app){
        db.Review.create(req.body).then(function(data){
            res.json(data);
        });
-   });
-
-   
+   }); 
 
 }
