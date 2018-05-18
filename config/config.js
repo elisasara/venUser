@@ -5,7 +5,7 @@ module.exports = {
 "development": {
     "username": "root",
     "password": process.env.MySQL_Database_Password,
-    "database": "database_development",
+    "database": "venReveiws_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
