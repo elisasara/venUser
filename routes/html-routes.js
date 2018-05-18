@@ -9,6 +9,7 @@ var venueSearch = require("../public/js/venueSearch.js");
 module.exports = function(app) {
 
     router.get("/venues", function(req, res){
+        // render the results of the foursquare API call to the results handlebars file
         res.render("results", venueSearch);
     });
 
