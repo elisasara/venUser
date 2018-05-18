@@ -8,6 +8,15 @@ var venueSearch = require("../public/js/venueSearch.js");
 
 module.exports = function(app) {
 
+
+    router.get('/', function(req,res) {
+        res.render('index');
+    });
+
+    router.get('/search', function(req,res) {
+        res.render('search');
+    });
+
     router.get("/venues", function(req, res){
         // render the results of the foursquare API call to the results handlebars file
         res.render("results", venueSearch);
@@ -34,6 +43,5 @@ module.exports = function(app) {
             res.json({ id: result.insertId });
         });
     });
-
 
 }

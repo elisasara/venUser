@@ -1,0 +1,12 @@
+@-ms-viewport{
+    width: device-width;
+  };
+ 
+ body  { 
+     background-color:Black;
+ };
+
+ h1 {
+    color: whitesmoke;
+    font-size: 36px;
+ };
