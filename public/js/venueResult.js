@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 var request = require("request");
 
 // get the inputs from each of the fields
@@ -10,8 +12,8 @@ module.exports = function (VENUE_ID, callback) {
         url: url,
         method: "GET",
         qs: {
-            client_id: "DJI2IAR1JVBJHOKACMOGQ0D31UFJJUGEGYOSQ3L30OSYWVUP",
-            client_secret: "LD2PAKPD1Y5PGJOPWMWWJI2X5Z5NFTQ1JUSYBL0AFFATQ50D",
+            client_id: process.env.fourSquare_API_client_id,
+            client_secret: process.env.fourSquare_API_client_secret,
             v: 20180515
         },
     }, function (err, res, body) {
@@ -23,7 +25,7 @@ module.exports = function (VENUE_ID, callback) {
         var venueInfo = {
             name: result.response.venue.name,
             url: result.response.venue.url,
-            facebook: result.response.venue.contact.facebookUsername,
+            // facebook: result.response.venue.contact.facebookUsername,
             // twitter: result.response.venue.contact.twitter,
             // instagram: result.response.venue.contact.instagram
         };

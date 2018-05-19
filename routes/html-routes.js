@@ -12,10 +12,6 @@ module.exports = function (app) {
         res.render("index");
     });
 
-    // app.get('/search', function(req,res) {
-    //     res.render("results", {venue: venue});
-    // });
-
     app.get("/venues", function (req, res) {
         // run the function passed in through venueSearch
         venueSearch(function (err, result) {
@@ -45,16 +41,4 @@ module.exports = function (app) {
             });
         })
     });
-
-    // app.post("/api/venues", function (req, res) {
-    //     review.create([
-    //         // check these names with database
-    //         "name_author", "category", "content"
-    //     ], [
-    //             req.body.name, req.body.type, req.body.review
-    //         ], function (result) {
-    //             res.json({ id: result.insertId });
-    //         });
-    // });
-
-}
+};
