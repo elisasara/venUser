@@ -1,28 +1,31 @@
-var router = express.Router();
+var express = require("express");
+
+// var router = express.Router();
+var app = express();
 
 var review = require("../models/post.js")
 
-var venueSearch = require("../public/js/venueSearch.js");
+var venue = require("../public/js/venueSearch.js");
 
 
 
 module.exports = function(app) {
 
 
-    router.get('/', function(req,res) {
+    app.get('/', function(req,res) {
         res.render('index');
     });
 
-    router.get('/search', function(req,res) {
+    app.get('/search', function(req,res) {
         res.render('search');
     });
 
-    router.get("/venues", function(req, res){
+    app.get("/venues", function(req, res){
         // render the results of the foursquare API call to the results handlebars file
-        res.render("results", venueSearch);
+        res.render("results", venue);
     });
 
-    router.get("/venues/:id", function(req, res){
+    app.get("/venues/:id", function(req, res){
         review.findAll(function(data){
             {where: venue_id = req.params.id}
             var reviewObj = {
@@ -33,7 +36,7 @@ module.exports = function(app) {
         });
     });
 
-    router.post("/api/venues", function(req, res){
+    app.post("/api/venues", function(req, res){
         review.create([
             // check these names with database
             "name_author", "category", "content"
