@@ -30,20 +30,22 @@ module.exports = function (app) {
         var venueId = req.params.id;
 
         // run foursquare call and return info as an object
-        venueResult(function (venueId, err, result) {
-            // get all of the info from the database
-            review.findAll(function (data) {
-                { where: venue_id = req.params.id }
-                // create one object with info from foursquare and from db
-                var venueObj = {
-                    venueInfo: result,
-                    reviews: data
-                };
-                console.log(venueObj);
-                // render to correct handlebars template
-                res.render("select", venueObj);
-            });
-        });
+        venueResult(venueId, function (err, result) {
+            res.render("select", { venueInfo: result })
+        })
+
+                    // get all of the info from the database
+                    // review.findAll(function (data) {
+                    //     { where: venue_id = req.params.id }
+                    //     // create one object with info from foursquare and from db
+                    //     var venueObj = {
+                    //         venueInfo: result,
+                    //         reviews: data
+                    //     };
+                    //     console.log(venueObj);
+                    //     // render to correct handlebars template
+                    //     res.render("select", venueObj);
+                    // });
 
         // review.findAll(function (data) {
         //     { where: venue_id = req.params.id }
