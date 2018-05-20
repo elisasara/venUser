@@ -33,7 +33,7 @@ module.exports = function (sequelize, DataTypes) {
 
     });
 
-    //add moment.js later
+    // add moment.js later
 
     return Review;
 };
