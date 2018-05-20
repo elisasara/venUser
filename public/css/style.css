@@ -3,10 +3,38 @@
   };
  
  body  { 
-     background-color:Black;
+     background-image: url("images/venUserBackground.png");
+     width: 100%;background-size: 100%;
  };
 
- h1 {
-    color: whitesmoke;
+ #mainPageHeaderFont {
+    color: black;
     font-size: 36px;
+    font-family: 'Permanent Marker', cursive;
+    
  };
+
+ .btn btn-secondary btn-lg {
+  
+    margin-left: 55px;
+    margin-bottom: 46px;
+
+ }
+
+
+
+ #searchSubmit {
+     margin-top: 20px;
+     margin-left: 285px;
+
+ };
+
+ #bigBox {
+     color: black;
+     height: 900px;
+     width: 600px;
+
+ }
+
+ 
+ 
