@@ -5,5 +5,4 @@ describe("Search", function() {
     it("should return an object listing all of the venues that match the search parameters", function(){
         expect(search().to.equal());
     });
-
 })
