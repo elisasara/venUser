@@ -7,7 +7,7 @@ module.exports = function(app){
        });
    });
 
-   app.get("api/review/:id", function(req, res){
+   app.get("/api/review/:id", function(req, res){
        db.Review.findOne({
            where: {
                venue_id: req.params.id 
@@ -17,13 +17,13 @@ module.exports = function(app){
        });
    });
 
+
    //post route to send reviews to database status: working =)
 
    app.post("/api/reviews", function(req, res){
+       db.Review.create(req.body).then(function(data){
+           res.json(data);
 
-       db.Review.create(req.body).then(function (dbReview) {
-         console.log("sent data to database");
-           res.json(dbReview);
        });
    }); 
 
