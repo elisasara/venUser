@@ -1,71 +1,70 @@
-
-<body>
+<div class="container-fluid" id="mainBody">
     <div class="jumbotron text-center bg-dark text-white" id="mainPageHeader">
         <div class="container">
             <h1 class="display-3" id="mainPageHeaderFont">
-                <strong>venUser</strong>
+                <strong>...venUser ..</strong>
             </h1>
         </div>
+    </div>
+</div>
 
+<!-- SELECTED VENUE DISPLAY -->
+<div class="row">
+    <div class="col-sm-6">
+        <h2>{{venueObj.venueInfo.name}}</h2>
+    </div>
+    <div class="col-sm-6">
+        <h4>Address:</h4>
     </div>
 
-    <!-- SELECTED VENUE DISPLAY -->
-    <div class="row">
-        <div class="col-sm-6">
-            <h2>{{venueObj.venueInfo.name}}</h2>
-        </div>
-        <div class="col-sm-6">
-            <h4>Address:</h4>
-        </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-6">
+        <h4>
+            <a href="{{venueObj.venueInfo.url}}"></a>
+        </h4>
+    </div>
+    <div class="col-sm-6">
+        <h4>{{venueObj.venueInfo.address}}</h4>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col-sm-4">
+        <h5>
+            <a href="{{venueObj.venueInfo.facebook}}"></a>
+        </h5>
+    </div>
+    <div class="col-sm-4">
+        <h5>
+            <a href="{{venueObj.venueInfo.twitter}}"></a>
+        </h5>
+    </div>
+    <div class="col-sm-4">
+        <h5>
+            <a href="{{venueObj.venueInfo.instagram}}"></a>
+        </h5>
+    </div>
+</div>
+<br>
+<br>
 
+<!-- REVIEW/TIP DISPLAY -->
+{{#each.review}}
+<div class="row text-center" id="reviewHeader">
+    <div class="col-sm-12">
+        <h2>Add a Review:</h2>
     </div>
-    <br>
-    <div class="row">
-        <div class="col-sm-6">
-            <h4>
-                <a href="{{venueObj.venueInfo.url}}"></a>
-            </h4>
-        </div>
-        <div class="col-sm-6">
-            <h4>{{venueObj.venueInfo.address}}</h4>
-        </div>
-    </div>
-    <br>
-    <br>
-    <div class="row">
-        <div class="col-sm-4">
-            <h5>
-                <a href="{{venueObj.venueInfo.facebook}}"></a>
-            </h5>
-        </div>
-        <div class="col-sm-4">
-            <h5>
-                <a href="{{venueObj.venueInfo.twitter}}"></a>
-            </h5>
-        </div>
-        <div class="col-sm-4">
-            <h5>
-                <a href="{{venueObj.venueInfo.instagram}}"></a>
-            </h5>
-        </div>
-    </div>
-    <br>
-    <br>
-
-    <!-- REVIEW/TIP DISPLAY -->
-    {{#each.review}}
-    <div class="row text-center" id="reviewHeader">
-        <div class="col-sm-12">
-            <h2>Add a Review:</h2>
-        </div>
-    </div>
-    <br>
-    <div class="row" id="reviewArea"></div>
-    <div class="col-sm-3"></div>
-    <div class="col-sm-3">
-        <a href="{{venueObj.venueInfo.review.name_author}}"></a>
-    </div>
-    <div class="col-sm-3">{{venueObj.venueInfo.review.content}} </div>
-    <div class="col-sm-3"></div>
-    {{/each}}
-    </div>
+</div>
+<br>
+<div class="row" id="reviewArea"></div>
+<div class="col-sm-3"></div>
+<div class="col-sm-3">
+    <a href="{{venueObj.venueInfo.review.name_author}}"></a>
+</div>
+<div class="col-sm-3">{{venueObj.venueInfo.review.content}} </div>
+<div class="col-sm-3"></div>
+{{/each}}
+</div>

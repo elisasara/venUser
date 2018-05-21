@@ -1,40 +1,95 @@
 @-ms-viewport{
     width: device-width;
-  };
+  }
  
  body  { 
      background-image: url("images/venUserBackground.png");
      width: 100%;background-size: 100%;
- };
+     opacity: 1%;
+     background-color: grey;
+ }
+
+ #mainCard  {
+    font-family: 'Amatic SC', cursive;
+    font-style: bold;
+
+ }
 
  #mainPageHeaderFont {
-    color: black;
-    font-size: 36px;
-    font-family: 'Permanent Marker', cursive;
+    color: white;
+    font-size: 175px;
+    font-family: 'Permanent Marker', cursive; 
     
- };
+ }
 
- .btn btn-secondary btn-lg {
-  
-    margin-left: 55px;
-    margin-bottom: 46px;
+ #mainPageHeader {
+    color: white;
+    font-size: 150px;
+    font-family: 'Permanent Marker', cursive;
+    margin-top: 20px;
+    
+ }
+
+ 
+
+ .card-title  {
+     font-size: 75px;
+     text-align: center;
 
  }
 
+ #searchBar  {
+    height: 200px;
+ 
+}
+
+label  {
+    font-family: 'Amatic SC', cursive;
+    font-style: bold;
+    font-size: 40px;
 
 
- #searchSubmit {
-     margin-top: 20px;
-     margin-left: 285px;
+}
+ #searchSubmit { 
+    width:200px;
+    height: 50px; 
+    margin-left: 120px;
+    font-family: 'Amatic SC', cursive;
+    font-style: bold;
+    font-size: 40px;
+    text-decoration-line: center;
+ }
 
- };
-
- #bigBox {
-     color: black;
-     height: 900px;
-     width: 600px;
+ #bottomBuisness {
+     background-color: black;
+     height: 100px;
+     width: 1200px;
+     margin-right: 10px;
 
  }
 
  
- 
+ h1, h2, h3, h4, h5 {
+
+    font-family: 'Amatic SC', cursive;
+    font-style: bold;
+ }
+
+ #selectedVenueAddress, #selectedVenueInstagram, #selectedVenueTwitter, #selectedVenueFacebook,
+ #selectedVenueUrl {
+
+     background-color: white;
+     border-top: 10px, color, black;
+     border-right: 10px, color, black;
+     border-bottom: 10px, color, black;
+     border-left: 10px, color, black;
+ }
+
+ #reviewHeader  {
+    text-decoration: underline; 
+    background-color: white;
+    border-top: 10px, color, black;
+    border-right: 10px, color, black;
+    border-bottom: 10px, color, black;
+    border-left: 10px, color, black; 
+ }
