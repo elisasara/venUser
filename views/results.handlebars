@@ -1,23 +1,26 @@
- <div class="jumbotron text-center bg-dark text-white" id="mainPageHeader" >
+<div class="container-fluid" id="mainBody">
+    <div class="jumbotron text-center bg-dark text-white" id="mainPageHeader">
         <div class="container">
-          <h1 class="display-3" id="mainPageHeaderFont"><strong>venUser</strong></h1>
+            <h1 class="display-3" id="mainPageHeaderFont">
+                <strong>...venUser ..</strong>
+            </h1>
         </div>
-      </div>
-    
-    <table class="table table-dark">
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">#</th>
-                <th scope="col">Venue</th>
-            </tr>
-        </thead>
-        <tbody>
-                {{#each venue}}
-            <tr data-id={{id}}>
-                <td>{{name}}</td>
-                <td>{{address}}</td>
-                </tr>
-                {{/each}}
-        </tbody>
-    </table>
+    </div>
+</div>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">#</th>
+            <th scope="col">Venue</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each venue}}
+        <tr data-id={{id}}>
+            <td>{{name}}</td>
+            <td>{{address}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
