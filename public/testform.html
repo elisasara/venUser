@@ -1,0 +1,109 @@
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" /> -->
+    <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
+    <!-- <script src="/assets/js/scripts.js"></script> -->
+    <!-- <title>venUser</title>
+</head>
+
+<body>
+<form id="venueForm">
+    <p>Fill out the information below to write review or tip =)</p>
+    
+    <p>Venue Name: TEST</p> 
+     <input type="text" name="Venue Name" id="venueid_fm" placeholder="1234" >
+
+    <!-venue id will come from ajax call-->
+  
+    <!-- <br> 
+    <br>
+
+    <label for="Anthors Name">Anthor's Name:</label>
+    <input type="text" name="Anthors Name" id="Author_Name_fm" placeholder="Reviewer Name" >
+    <br>
+    <br>
+
+    <label for="category">Category:</label>
+    <select name="category" id="category_fm">
+        <option value="Review">Review</option>
+        <option value="Tip">Tips</option>
+    </select>
+    <br>
+    <br>
+    <label for="content">Content:</label>
+    <br>
+    <textarea class="form-control" rows="10" cols="30" id = "content_fm">
+    write content in here
+    </textarea>
+    <br>
+    <br>
+    <label for="rating_venue">Venue Rating Stars!</label>
+     <select name="rating_venue" id="rating_venue_fm">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+<br>
+<br>
+  
+    <button id="formSubmit">Submit</button>
+</form>
+</body>  -->
+<!-- <script>
+
+$(document).ready(function () {
+
+$("#formSubmit").on("click", function() {
+       event.preventDefault();
+    console.log("submit button is clicked")
+
+
+    var VenueIdInput = $("#venueid_fm").val().trim();
+    var AuthorNameInput = $("#Author_Name_fm").val().trim();
+    var CategoryInput = $("#category_fm").val().trim();
+    var ContentInput = $("#content_fm").val().trim();
+    var VenueRatingInput = $("#rating_venue_fm").val().trim();
+    var VenueForm = $("#venueForm").val().trim();
+
+    console.log("venue name:" + VenueIdInput);
+    console.log("author name:" + AuthorNameInput);
+    console.log("category:" + CategoryInput);
+    console.log("content" + ContentInput);
+    console.log("venue rating" + VenueRatingInput);
+
+    var newReveiw  ={
+        name_author: AuthorNameInput,
+        category: CategoryInput,
+        content: ContentInput,
+        rating_venue:VenueRatingInput,
+        venue_id: VenueIdInput,
+
+    }
+    console.log("trying to get infor from new object")
+    console.log(newReveiw.name_author);
+    console.log(newReveiw.category);
+    console.log(newReveiw.content);
+    console.log(newReveiw.rating_venue);
+    console.log(newReveiw.venue_id);
+
+    submitReview()
+
+});
+
+function submitReview(review) {
+    $.post("/api/reviews", review, function () {
+        window.location.href = "/";
+    });
+
+}
+
+});
+
+
+
+</script> -->

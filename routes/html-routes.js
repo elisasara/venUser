@@ -1,12 +1,15 @@
 var express = require("express");
+
 var app = express();
 var db = require("../models")
-var venueSearch = require("../public/js/venueSearch.js");
+
 var venueResult = require("../public/js/venueResult.js");
 
+var venueSearch = require("../public/js/venueSearch.js");
 
-module.exports = function (app) {
 
+
+module.exports = function(app) {
 
     app.get("/", function (req, res) {
         res.render("index");
@@ -41,4 +44,8 @@ module.exports = function (app) {
             });
         })
     });
+
+       app.get("/form", function (req, res) {
+        res.render("form")
+    })
 };
