@@ -19,7 +19,7 @@ module.exports = function(app){
        });
    });
 
-   app.post("/api/retrievelist", function(req, res){
+   app.post("/venuelist", function(req, res){
     var searchResults = [];
     request({
         url: "https://api.foursquare.com/v2/venues/search",
@@ -53,11 +53,51 @@ module.exports = function(app){
         };
         console.log(searchResults);
         console.log(searchResults.length);
-        // res.redirect()
-        res.render("results", {venue: searchResults, test: searchResults[0] });
+        res.render("results", {venue: searchResults});
     });
-
    });
+
+   app.post("/venues/:id", function(req, res){
+        var venueId = req.params.id;
+        var url = "https://api.foursquare.com/v2/venues/" + venueId;
+        request({
+            url: url,
+            method: "GET",
+            qs: {
+                client_id: process.env.fourSquare_API_client_id,
+                client_secret: process.env.fourSquare_API_client_secret,
+                v: 20180515
+            },
+        }, function (err, response, body) {
+            if (err) {
+                console.log(err);
+            }
+            // console.log(JSON.parse(body));
+            var result = JSON.parse(body);
+            var venueInfo = {
+                name: result.response.venue.name,
+                url: result.response.venue.url,
+                facebook: result.response.venue.contact.facebookUsername,
+                twitter: result.response.venue.contact.twitter,
+                instagram: result.response.venue.contact.instagram
+            };
+            console.log(venueInfo);
+
+            db.Review.findOne({
+                where: {
+                    venue_id: venueId
+                }
+            }).then(function(data){
+                venueObj = {
+                    venueInfo: venueInfo,
+                    reviews: data
+                };
+                console.log(venueObj);
+                res.render("select", {venueObj: venueObj})
+            });
+   });
+});
+
 
    //post route to send reviews to database status: working =)
 

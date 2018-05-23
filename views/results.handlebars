@@ -18,7 +18,14 @@
     <tbody>
         {{#each venue}}
         <tr data-id={{this.id}}>
-            <td><a href="/venues/{{this.id}}">{{this.name}}</a></td>
+            <td><form method="post" action="/venues/{{this.id}}">
+                <input type="hidden" name="venueid" value="{{this.id}}">
+                <button type="submit" name="submit_param" value="submit_value">
+                    {{this.name}}
+                </button>
+            </form>
+            {{!-- <a href="/venues/{{this.id}}">{{this.name}}</a> --}}
+            </td>
             <td>{{this.address}}</td>
         </tr>
         {{/each}}
