@@ -1,5 +1,4 @@
-require("dotenv").config();
-
+require('dotenv').config();
 var request = require("request");
 
 // get the inputs from each of the fields
@@ -25,9 +24,9 @@ module.exports = function (VENUE_ID, callback) {
         var venueInfo = {
             name: result.response.venue.name,
             url: result.response.venue.url,
-            // facebook: result.response.venue.contact.facebookUsername,
-            // twitter: result.response.venue.contact.twitter,
-            // instagram: result.response.venue.contact.instagram
+            facebook: result.response.venue.contact.facebookUsername,
+            twitter: result.response.venue.contact.twitter,
+            instagram: result.response.venue.contact.instagram
         };
         console.log(venueInfo);
         callback(null, venueInfo);
