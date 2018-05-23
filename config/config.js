@@ -4,14 +4,14 @@ module.exports = {
 
 "development": {
     "username": "root",
-    "password": process.env.MySQL_Database_Password,
+    "password": "Bacon111",
     "database": "venReveiws_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": process.env.MySQL_Database_Password,
+    "password": "Bacon111",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"

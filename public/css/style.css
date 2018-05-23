@@ -30,7 +30,13 @@
     
  }
 
- 
+ #resultTable  {
+
+    width: 800px;
+    height: 600px;
+    margin-left: 230px;
+
+ }
 
  .card-title  {
      font-size: 75px;
@@ -53,11 +59,24 @@ label  {
  #searchSubmit { 
     width:200px;
     height: 50px; 
-    margin-left: 120px;
+    margin-left: 150px; 
     font-family: 'Amatic SC', cursive;
     font-style: bold;
-    font-size: 40px;
-    text-decoration-line: center;
+    font-size: 30px;
+    text-decoration: center;
+ }
+
+ #city  {
+
+ }
+
+ #state  {
+     
+
+ }
+
+ #venue  {
+
  }
 
  #bottomBuisness {
