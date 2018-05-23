@@ -1,16 +1,23 @@
-require("dotenv").config();
-
+require('dotenv').config();
 var request = require("request");
 
 
 module.exports = function (callback) {
     // on click event for search submit button
-    $("searchSubmit").on("click", function (event) {
+    $("#searchSubmit").on("click", function (event) {
         event.preventDefault();
+        console.log("I've been clicked!");
         // get the inputs from each of the fields
         var city = $("#city").val().trim();
-        var state = $("state").val().trim();
-        var venueName = $("venue").val().trim();
+        var state = $("#state").val().trim();
+        var venueName = $("#venue").val().trim();
+
+        // $.ajax({
+        //     url: "https://api.foursquare.com/v2/venues/search?client_id=DJI2IAR1JVBJHOKACMOGQ0D31UFJJUGEGYOSQ3L30OSYWVUP&client_secret=LD2PAKPD1Y5PGJOPWMWWJI2X5Z5NFTQ1JUSYBL0AFFATQ50D&near=" + city + "," + state + "&query=" + venueName + "&v=20180515&limit=10",
+        //     method: "GET"
+        // }).then(function(response){
+        //     console.log(response)
+        // });
 
         request({
             url: "https://api.foursquare.com/v2/venues/search",
