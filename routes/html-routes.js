@@ -1,11 +1,10 @@
 var express = require("express");
-
 var app = express();
 var db = require("../models")
 
-var venueResult = require("../public/js/venueResult.js");
+// var venueResult = require("../public/js/venueResult.js");
 
-var venueSearch = require("../public/js/venueSearch.js");
+// var venueSearch = require("../public/js/venueSearch.js");
 
 
 
@@ -17,10 +16,10 @@ module.exports = function(app) {
 
     app.get("/venues", function (req, res) {
         // run the function passed in through venueSearch
-        venueSearch(function (err, result) {
+        // venueSearch(function (err, result) {
             // render the results of the foursquare API call to the results handlebars file
-            res.render("results", { venue: result });
-        })
+            res.render("results", { venue: res });
+        // })
     });
 
     app.get("/venues/:id", function (req, res) {

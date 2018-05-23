@@ -17,9 +17,9 @@
     </thead>
     <tbody>
         {{#each venue}}
-        <tr data-id={{id}}>
-            <td>{{name}}</td>
-            <td>{{address}}</td>
+        <tr data-id={{this.id}}>
+            <td><a href="/venues/{{this.id}}">{{this.name}}</a></td>
+            <td>{{this.address}}</td>
         </tr>
         {{/each}}
     </tbody>
