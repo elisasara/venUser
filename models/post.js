@@ -27,7 +27,7 @@ module.exports = function (sequelize, DataTypes) {
         len: [1]
       },
       venue_id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
       },
 

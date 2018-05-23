@@ -20,6 +20,10 @@ module.exports = function(app){
    });
 
    app.post("/venuelist", function(req, res){
+    var city = req.body.city;
+    var state = req.body.state;
+    var venue = req.body.venue;
+    console.log(city + " ," + state + " ," + venue);
     var searchResults = [];
     request({
         url: "https://api.foursquare.com/v2/venues/search",
@@ -27,8 +31,8 @@ module.exports = function(app){
         qs: {
             client_id: process.env.fourSquare_API_client_id,
             client_secret: process.env.fourSquare_API_client_secret,
-            near: "Philadelphia, PA",
-            query: "Fillmore",
+            near: city + "," + state,
+            query: venue,
             v: 20180515,
             limit: 10
         },
@@ -36,6 +40,7 @@ module.exports = function(app){
         if (err) {
             console.log(err);
         }
+        // console.log(response);
         var venues = JSON.parse(body);
         var venueInfo = venues.response.venues;
         for (var i = 0; i < venueInfo.length; i++) {
