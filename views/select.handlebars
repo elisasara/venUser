@@ -68,31 +68,40 @@
 
 <div class="row text-center" id="reviewHeader">
     <div class="col-sm-12">
-        <h2>Add a Review:</h2>
-    </div>
+        <div class="card centered">
+        <h2>Reviews and Tips for {{venueObj.venueInfo.name}}</h2>
+    </div>>
 </div>
 <br>
-{{#each venueObj}}
-<div class="row" id="reviewArea"></div>
-<div class="col-sm-3"></div>
+{{#each reviewObj}}
+<div class="row" id="reviewArea">
+<div class="card centered">
+
 <div class="col-sm-3">
-{{venueObj.review}}"
+
+</div>
+
+<div class="col-sm-3">
+{{reviewObj.review}}"
+</div>
+
+<div class="col-sm-3">
+    {{reviewObj.review}} 
 </div>
 <div class="col-sm-3">
-    {{venueObj.review}} 
-    </div>
-<div class="col-sm-3"></div>
+
+</div>
 {{/each}}
 </div>
-<div class ="row">
-    <div class ="col-sm-12">
-    <div class ="card">
+</div>
+<div class ="row justify-content-center">
+    <div class ="col-sm-10">
+    <div class ="card centered">
 
     <form id="venueForm" method="post">
-        <p>Fill out the information below to write review or tip =)</p>
     
         <h2>{{venueObj.venueInfo.name}}</h2>
-        <input type="text" name="Venue Name" id="venueid_fm" value={{venueId}}>
+        <input type="text" name="Venue Name" id="venueid_fm" value="{{venueId}}" placeholder="{{venueId}}">
     
         <!--venue id will come from ajax call-->
     

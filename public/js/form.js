@@ -35,7 +35,7 @@ $(document).ready(function () {
 
         };
         submitPost(newReveiw);
-        getReveiw();
+        
     };
     function submitPost(post) {
         $.post("/api/reviews", post, function () {
