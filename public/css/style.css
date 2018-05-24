@@ -31,9 +31,11 @@
  }
 
  #resultTable  {
+
     width: 800px;
     height: 600px;
     margin-left: 230px;
+
  }
 
  .card-title  {
@@ -56,45 +58,40 @@ label  {
 }
  #searchSubmit { 
     width:200px;
-    height: 50px; 
-    margin-left: 120px;
+    height: 55px; 
+    margin-left: 150px; 
     font-family: 'Amatic SC', cursive;
     font-style: bold;
-    font-size: 40px;
-    text-decoration-line: center;
+    font-size: 30px;
+    text-decoration: center;
  }
 
- #city  {
-
-}
-
-#state  {
-   
-
-}
-
-#venue  {
-
-}
-
- #bottomBuisness {
-     background-color: black;
-     height: 100px;
-     width: 1200px;
-     margin-right: 10px;
-
+ #city, #state, #venue  {
+    font-family: 'Amatic SC', cursive;
+    font-style: bolder;
+    font-size: 30px;
  }
 
- 
+
+
  h1, h2, h3, h4, h5 {
 
     font-family: 'Amatic SC', cursive;
-    font-style: bold;
+     font-style: bolder; 
+    /* font-weight:700; */
  }
 
- #selectedVenueAddress, #selectedVenueInstagram, #selectedVenueTwitter, #selectedVenueFacebook,
- #selectedVenueUrl {
+ a  {
+    font-family: 'Amatic SC', cursive;
+    font-style: bold;
+    font-size: 30px;
+    text-decoration: center;
 
+ }
+
+ #selectedVenuename, #selectedVenueAddress, #selectedVenueInstagram, #selectedVenueTwitter, #selectedVenueFacebook,
+ #selectedVenueUrl, #Address  {
+     width: 45px;
      background-color: white;
      border-top: 10px, color, black;
      border-right: 10px, color, black;
