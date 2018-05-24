@@ -110,3 +110,12 @@ label  {
     border-bottom: 10px, color, black;
     border-left: 10px, color, black; 
  }
+
+ .tab-content {
+     background-color: white;
+ }
+
+#reviewArea #writeReviewArea {
+    background-color: white;
+    color: black;
+ }

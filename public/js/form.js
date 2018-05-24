@@ -23,8 +23,10 @@ $(document).ready(function () {
     function handleFormSubmit(event) {
         event.preventDefault();
 
-        if (!VenueIdInput.val().trim() || !AuthorNameInput.val().trim() || !CategoryInput.val().trim() || !VenueRatingInput.val().trim()) {
-          return;
+        // if (!VenueIdInput.val().trim() || !AuthorNameInput.val().trim() || !CategoryInput.val().trim() || !VenueRatingInput.val().trim()) {
+            if (!AuthorNameInput.val().trim() || !CategoryInput.val().trim() || !VenueRatingInput.val().trim()) {
+  
+        return;
         }
         var newReveiw = {
             name_author: AuthorNameInput.val().trim(),
