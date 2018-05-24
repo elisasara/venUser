@@ -74,31 +74,37 @@ module.exports = function(app){
                 v: 20180515
             },
         }, function (err, response, body) {
+            var venueInfo = "";
+            var reviewInfo = "";
             if (err) {
                 console.log(err);
             }
             // console.log(JSON.parse(body));
             var result = JSON.parse(body);
-            var venueInfo = {
+            venueInfo = {
                 name: result.response.venue.name,
                 url: result.response.venue.url,
                 facebook: result.response.venue.contact.facebookUsername,
                 twitter: result.response.venue.contact.twitter,
                 instagram: result.response.venue.contact.instagram
             };
-            console.log(venueInfo);
+            console.log("Venue info: ", venueInfo);
 
-            db.Review.findOne({
+            db.Review.findAll({
                 where: {
                     venue_id: venueId
                 }
             }).then(function(data){
-                venueObj = {
-                    venueInfo: venueInfo,
+                // venueObj = {
+                //     venueInfo: venueInfo,
+                //     reviews: data
+                // };
+                // console.log(venueObj);
+                reviewInfo = {
                     reviews: data
-                };
-                console.log(venueObj);
-                res.render("select", {venueObj: venueObj})
+                }
+                console.log("Review info:", reviewInfo)
+                res.render("select", {venueInfo: venueInfo, reviewInfo: reviewInfo})
             });
    });
 });
