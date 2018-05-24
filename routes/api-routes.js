@@ -43,6 +43,7 @@ module.exports = function(app){
         // console.log(response);
         var venues = JSON.parse(body);
         var venueInfo = venues.response.venues;
+
         for (var i = 0; i < venueInfo.length; i++) {
             // create object for diplaying info in handlebars
             var eachResult = {
@@ -86,23 +87,42 @@ module.exports = function(app){
                 twitter: result.response.venue.contact.twitter,
                 instagram: result.response.venue.contact.instagram
             };
+            
             console.log(venueInfo);
 
-            db.Review.findOne({
+            db.Review.findAll({
                 where: {
                     venue_id: venueId
                 }
-            }).then(function(data){
-                venueObj = {
-                    venueInfo: venueInfo,
-                    reviews: data
+            }).then(function(dbReview){
+                venueObj = { 
+                    venueInfo: venueInfo, 
+                    review: dbReview 
                 };
+            
                 console.log(venueObj);
-                res.render("select", {venueObj: venueObj})
+                res.render("select", { venueObj: venueObj})
             });
    });
 });
 
+//get route 
+// app.get("/venues/:id", function (req, res){
+    
+//         db.Review.findAll({
+//             where: {
+//                 venue_id: venueId
+//             }
+//         }).then(function (dbReview) {
+//            reviewObj = {
+//                 venueInfo: venueInfo,
+//                 review: dbReview
+//             };
+
+//             console.log(reviewObj);
+//             res.render("select", { reviewObj: reviewObj })
+//     });
+// });
 
    //post route to send reviews to database status: working =)
 
