@@ -65,6 +65,7 @@ module.exports = function (app) {
 
        app.post("/venues/:id", function(req, res){
            var venueObj = {};
+           var venueInfo;
             var venueId = req.params.id;
             var url = "https://api.foursquare.com/v2/venues/" + venueId;
             db.Review.findAll({
@@ -72,8 +73,16 @@ module.exports = function (app) {
                     venue_id: venueId
                 }
             }).then(function(dbReview){
-                var newReview = JSON.parse(JSON.stringify(dbReview));
-                console.log(newReview);
+
+                // loop through array of reviews and then parse and stringify each review to add to the overall array
+                // insert array into venueObj to be put into handlebars
+                var reviewArr = [];
+                var reviewsToShow = JSON.parse(JSON.stringify(dbReview));
+                // console.log(reviewsToShow);
+                for (var i=0; i<reviewsToShow.length; i++) {
+                    reviewArr.push(reviewsToShow[i]);
+                };
+                console.log("Review Array: ", reviewArr);
                 // venueObj = { 
                 //     // venueInfo: venueInfo, 
                 //     review: dbReview
@@ -94,7 +103,7 @@ module.exports = function (app) {
                 }
                 // console.log(JSON.parse(body));
                 var result = JSON.parse(body);
-                var venueInfo = {
+                venueInfo = {
                     name: result.response.venue.name,
                     url: result.response.venue.url,
                     facebook: result.response.venue.contact.facebookUsername,
@@ -103,6 +112,11 @@ module.exports = function (app) {
                 };
 
                 console.log("venue Info:", venueInfo);
+
+                venueObj = {
+                    venueInfo: venueInfo,
+                    reviewObj: reviewArr
+                };
 
                 // db.Review.findAll({
                 //     where: {
@@ -115,8 +129,8 @@ module.exports = function (app) {
                 //     };
 
                     // console.log(venueObj);
-                    // res.render("select", { venueObj: venueObj})
-                    res.render("select", {venueInfo: venueInfo});
+                    res.render("select", { venueObj: venueObj})
+                    // res.render("select", {venueInfo: venueInfo});
                 });
        });
     });
