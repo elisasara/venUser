@@ -31,17 +31,19 @@ module.exports = function(app) {
     //     // run foursquare call and return info as an object
     //     venueResult(venueId, function (err, result) {
     //         // get all of the info from the database
-    //         db.Review.findAll({
-    //              where: {venue_id: venueId}
-    //             }).then(function(data){
-    //             // create one object with info from foursquare and from db
+            // db.Review.findAll({
+            //      where: {venue_id: venueId}
+            //     }).then(function(data){
+            //         console.log("data: ", data);
+            //         res.render("select", {reviewInfo: data});
+                // create one object with info from foursquare and from db
     //             venueObj = {
     //                 venueInfo: result,
     //                 reviews: data
     //             };
     //             console.log(venueObj);
     //             res.render("select", {venueObj: venueObj})
-    //         });
+            // });
     //     })
     // });
 
