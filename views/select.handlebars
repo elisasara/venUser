@@ -1,9 +1,29 @@
 <div class="container-fluid" id="mainBody">
-    <div class="jumbotron text-center bg-dark text-white" id="mainPageHeader">
+    <div class="jumbotron text-center bg-dark text-white" id="selectedPageHeader">
         <div class="container">
             <h1 class="display-3" id="mainPageHeaderFont">
                 <strong>...venUser ..</strong>
             </h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="d-flex justify-content-center text-black" id="newSearchBar">
+        <div class="card" id="mainCard" style="width: 95rem;">
+            <div class="card-body center">
+                <form class="form-inline justify-content-center text-black" action="/venuelist" method="post">
+                    <h3 id="newSearchTitle">
+                        <strong>Search New Venue</strong>
+                    </h3>
+                    <label for="city">City:</label>
+                    <input type="search" class="form-control" name="city" id="newCity">
+                    <label for="state">State:</label>
+                    <input type="search" class="form-control" name="state" id="newState">
+                    <label for="venue">Venue:</label>
+                    <input type="search" class="form-control" name="venue" id="newVenue">
+                    <input class="btn btn-secondary btn-lg" id="newSearchSubmit" type="submit">
+                </form>
+            </div>
         </div>
     </div>
 </div>
@@ -45,8 +65,7 @@
                         <br /> {{this.content}}
                     </div>
                 </div>
-                <hr>
-                {{/each}}
+                <hr> {{/each}}
             </div>
         </div>
         <div class="col-sm-6">
