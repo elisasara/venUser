@@ -78,7 +78,7 @@ module.exports = function (app) {
                 // insert array into venueObj to be put into handlebars
                 var reviewArr = [];
                 var reviewsToShow = JSON.parse(JSON.stringify(dbReview));
-                // console.log(reviewsToShow);
+                console.log(reviewsToShow);
                 for (var i=0; i<reviewsToShow.length; i++) {
                     reviewArr.push(reviewsToShow[i]);
                 };
@@ -104,7 +104,12 @@ module.exports = function (app) {
                 // console.log(JSON.parse(body));
                 var result = JSON.parse(body);
                 venueInfo = {
+                    id: result.response.venue.id,
                     name: result.response.venue.name,
+                    address: result.response.venue.location.address,
+                    city: result.response.venue.location.city,
+                    state: result.response.venue.location.state,
+                    zip: result.response.venue.location.postalCode,
                     url: result.response.venue.url,
                     facebook: result.response.venue.contact.facebookUsername,
                     twitter: result.response.venue.contact.twitter,
@@ -128,7 +133,7 @@ module.exports = function (app) {
                 //         review: dbReview 
                 //     };
 
-                    // console.log(venueObj);
+                    console.log("Whole Object: ", venueObj);
                     res.render("select", { venueObj: venueObj})
                     // res.render("select", {venueInfo: venueInfo});
                 });
