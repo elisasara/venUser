@@ -116,3 +116,23 @@ label  {
     background-color: white;
     color: black;
  }
+
+ #venueInfoArea {
+     background-color: white;
+     margin-bottom: 15px;
+ }
+
+ #writeReviewArea {
+     padding-left: 5px;
+     padding-right: 5px;
+ }
+
+ #chooseVenueButton {
+     background-color: white;
+     border-color: white;
+     color: black;
+ }
+
+ #chooseVenueButton:hover {
+    color: blue;
+ }

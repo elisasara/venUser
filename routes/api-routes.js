@@ -83,11 +83,6 @@ module.exports = function (app) {
                     reviewArr.push(reviewsToShow[i]);
                 };
                 console.log("Review Array: ", reviewArr);
-                // venueObj = { 
-                //     // venueInfo: venueInfo, 
-                //     review: dbReview
-                // };
-                // console.log("First: ", venueObj);
 
             request({
                 url: url,
@@ -123,95 +118,12 @@ module.exports = function (app) {
                     reviewObj: reviewArr
                 };
 
-                // db.Review.findAll({
-                //     where: {
-                //         venue_id: venueId
-                //     }
-                // }).then(function(dbReview){
-                //     venueObj = { 
-                //         venueInfo: venueInfo, 
-                //         review: dbReview 
-                //     };
-
                     console.log("Whole Object: ", venueObj);
                     res.render("select", { venueObj: venueObj})
                     // res.render("select", {venueInfo: venueInfo});
                 });
        });
     });
-
-
-    //get route 
-    // app.get("/venues/:id", function (req, res){
-
-    //         db.Review.findAll({
-    //             where: {
-    //                 venue_id: venueId
-    //             }
-    //         }).then(function (dbReview) {
-    //            reviewObj = {
-    //                 venueInfo: venueInfo,
-    //                 review: dbReview
-    //             };
-
-    //             console.log(reviewObj);
-    //             res.render("select", { reviewObj: reviewObj })
-    //     });
-    // });
-    // app.post("/venues/:id", function (req, res) {
-    //     var venueId = req.params.id;
-    //     var url = "https://api.foursquare.com/v2/venues/" + venueId;
-    //     request({
-    //         url: url,
-    //         method: "GET",
-    //         qs: {
-    //             client_id: process.env.fourSquare_API_client_id,
-    //             client_secret: process.env.fourSquare_API_client_secret,
-    //             v: 20180515
-    //         },
-    //     }, function (err, response, body) {
-    //         var venueInfo = "";
-    //         var reviewInfo = "";
-    //         if (err) {
-    //             console.log(err);
-    //         }
-            // console.log(JSON.parse(body));
-            // var result = JSON.parse(body);
-            // venueInfo = {
-            //     name: result.response.venue.name,
-            //     url: result.response.venue.url,
-            //     facebook: result.response.venue.contact.facebookUsername,
-            //     twitter: result.response.venue.contact.twitter,
-            //     instagram: result.response.venue.contact.instagram
-            // };
-            // console.log("Venue info: ", venueInfo);
-            // res.json(venueInfo);
-
-            // db.Review.findAll({
-            //     where: {
-            //         venue_id: venueId
-            //     }
-            // }).then(function (data) {
-
-            //     console.log("data: ", data);
-            //     venueObj = {
-            //         venueInfo: venueInfo,
-            //         reviews: data
-            //     };
-            //     console.log("Venue object: ", venueObj);
-                // reviewInfo = {
-                //     reviews: data
-                // }
-                // console.log("Review info: ", reviewInfo.reviews[0])
-                // console.log("dataValues " + reviewInfo.dataValues)
-                // console.log("reviewInfo " + reviewInfo.reviews[0]);
-                // res.render("select", { venueInfo: venueInfo, reviewInfo: reviewInfo })
-        //         res.render("select", {venueObj: venueObj})
-        //     });
-        // });
-
-
-        //post route to send reviews to database status: working =)
 
         app.post("/api/reviews", function (req, res) {
             db.Review.create(req.body).then(function (data) {

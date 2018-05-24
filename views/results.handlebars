@@ -20,13 +20,13 @@
         <tr data-id={{this.id}}>
             <td><form method="post" action="/venues/{{this.id}}">
                 <input type="hidden" name="venueid" value="{{this.id}}">
-                <button type="submit" name="submit_param" value="submit_value">
+                <button type="submit" name="submit_param" value="submit_value" id="chooseVenueButton">
                     {{this.name}}
                 </button>
             </form>
             {{!-- <a href="/venues/{{this.id}}">{{this.name}}</a> --}}
             </td>
-            <td>{{this.address}}</td>
+            <td>{{this.address}}<br />{{this.city}}, {{this.state}} {{this.zip}}</td>
         </tr>
         {{/each}}
     </tbody>

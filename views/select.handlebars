@@ -27,24 +27,6 @@
             <h4>{{venueObj.venueInfo.city}}, {{venueObj.venueInfo.state}} {{venueObj.venueInfo.zip}}</h4>
         </div>
     </div>
-    {{!-- <div class="row">
-        <div class="col-sm-4">
-            <h5>
-                <a href="https://www.facebook.com/{{venueObj.venueInfo.facebook}}" target="blank">facebook.com/{{venueObj.venueInfo.facebook}}</a>
-            </h5>
-        </div> --}}
-        {{!--
-        <div class="col-sm-4">
-            <h5>
-                <a href="{{venueObj.venueInfo.twitter}}">{{venueObj.venueInfo.twitter}}</a>
-            </h5>
-        </div>
-        <div class="col-sm-4">
-            <h5>
-                <a href="{{venueObj.venueInfo.instagram}}">{{venueObj.venueInfo.instagram}}</a>
-            </h5>
-        </div> --}}
-    {{!-- </div> --}}
 </div>
 
 
@@ -68,35 +50,37 @@
             </div>
         </div>
         <div class="col-sm-6">
-            <h3>Write a Review</h3>
-            <form id="venueForm" method="post" action="/venues/{{venueObj.venueInfo.id}}">
+            <div class="card" id="writeReviewArea">
+                <h3>Write a Review</h3>
+                <form id="venueForm" method="post" action="/venues/{{venueObj.venueInfo.id}}">
 
-                <input type="hidden" name="Venue Name" id="venueid_fm" value="{{venueObj.venueInfo.id}}">
-                <label for="Authors Name">Author's Name:</label>
-                <br />
-                <input type="text" name="Authors Name" id="Author_Name_fm" placeholder="Reviewer Name">
-                <br />
-                <label for="category">Category:</label>
-                <select name="category" id="category_fm">
-                    <option value="Review">Review</option>
-                    <option value="Tip">Tips</option>
-                </select>
-                <br />
-                <label for="content">Content:</label>
-                <br>
-                <textarea class="form-control" rows="10" cols="30" id="content_fm"></textarea>
-                <br />
-                <label for="rating_venue">Venue Rating Stars!</label>
-                <select name="rating_venue" id="rating_venue_fm">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <br />
-                <button type="submit" id="formSubmit">Submit a Tip or Review</button>
-            </form>
+                    <input type="hidden" name="Venue Name" id="venueid_fm" value="{{venueObj.venueInfo.id}}">
+                    <label for="Authors Name">Author's Name:</label>
+                    <br />
+                    <input type="text" name="Authors Name" id="Author_Name_fm" placeholder="Reviewer Name">
+                    <br />
+                    <label for="category">Category:</label>
+                    <select name="category" id="category_fm">
+                        <option value="Review">Review</option>
+                        <option value="Tip">Tips</option>
+                    </select>
+                    <br />
+                    <label for="content">Content:</label>
+                    <br>
+                    <textarea class="form-control" rows="10" cols="30" id="content_fm"></textarea>
+                    <br />
+                    <label for="rating_venue">Venue Rating Stars!</label>
+                    <select name="rating_venue" id="rating_venue_fm">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br />
+                    <button type="submit" id="formSubmit">Submit a Tip or Review</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
