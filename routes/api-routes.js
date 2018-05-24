@@ -23,7 +23,7 @@ module.exports = function (app) {
                 client_id: process.env.fourSquare_API_client_id,
                 client_secret: process.env.fourSquare_API_client_secret,
                 near: city + "," + state,
-                categoryId: "4bf58dd8d48988d1e5931735", 
+                // categoryId: "4bf58dd8d48988d1e5931735", 
                 query: venue,
                 v: 20180515,
                 limit: 10
