@@ -6,9 +6,9 @@ module.exports = function(app){
    app.get("/api/reviews", function(req, res){
        db.Review.findAll({}).then(function(data){
            res.json(data);
-       });
-   });
-
+   
+    });
+});
    app.get("/api/review/:id", function(req, res){
        db.Review.findOne({
            where: {
@@ -43,6 +43,7 @@ module.exports = function(app){
         // console.log(response);
         var venues = JSON.parse(body);
         var venueInfo = venues.response.venues;
+
         for (var i = 0; i < venueInfo.length; i++) {
             // create object for diplaying info in handlebars
             var eachResult = {
@@ -62,7 +63,67 @@ module.exports = function(app){
     });
    });
 
-   app.post("/venues/:id", function(req, res){
+//    app.post("/venues/:id", function(req, res){
+//         var venueId = req.params.id;
+//         var url = "https://api.foursquare.com/v2/venues/" + venueId;
+//         request({
+//             url: url,
+//             method: "GET",
+//             qs: {
+//                 client_id: process.env.fourSquare_API_client_id,
+//                 client_secret: process.env.fourSquare_API_client_secret,
+//                 v: 20180515
+//             },
+//         }, function (err, response, body) {
+//             if (err) {
+//                 console.log(err);
+//             }
+//             // console.log(JSON.parse(body));
+//             var result = JSON.parse(body);
+//             var venueInfo = {
+//                 name: result.response.venue.name,
+//                 url: result.response.venue.url,
+//                 facebook: result.response.venue.contact.facebookUsername,
+//                 twitter: result.response.venue.contact.twitter,
+//                 instagram: result.response.venue.contact.instagram
+//             };
+            
+//             console.log(venueInfo);
+
+//             db.Review.findAll({
+//                 where: {
+//                     venue_id: venueId
+//                 }
+//             }).then(function(dbReview){
+//                 venueObj = { 
+//                     venueInfo: venueInfo, 
+//                     review: dbReview 
+//                 };
+            
+//                 console.log(venueObj);
+//                 res.render("select", { venueObj: venueObj})
+//             });
+//    });
+
+
+//get route 
+// app.get("/venues/:id", function (req, res){
+    
+//         db.Review.findAll({
+//             where: {
+//                 venue_id: venueId
+//             }
+//         }).then(function (dbReview) {
+//            reviewObj = {
+//                 venueInfo: venueInfo,
+//                 review: dbReview
+//             };
+
+//             console.log(reviewObj);
+//             res.render("select", { reviewObj: reviewObj })
+//     });
+// });
+    app.post("/venues/:id", function (req, res) {
         var venueId = req.params.id;
         var url = "https://api.foursquare.com/v2/venues/" + venueId;
         request({
@@ -74,35 +135,42 @@ module.exports = function(app){
                 v: 20180515
             },
         }, function (err, response, body) {
+            var venueInfo = "";
+            var reviewInfo = "";
             if (err) {
                 console.log(err);
             }
             // console.log(JSON.parse(body));
             var result = JSON.parse(body);
-            var venueInfo = {
+            venueInfo = {
                 name: result.response.venue.name,
                 url: result.response.venue.url,
                 facebook: result.response.venue.contact.facebookUsername,
                 twitter: result.response.venue.contact.twitter,
                 instagram: result.response.venue.contact.instagram
             };
-            console.log(venueInfo);
+            console.log("Venue info: ", venueInfo);
 
-            db.Review.findOne({
+            db.Review.findAll({
                 where: {
                     venue_id: venueId
                 }
-            }).then(function(data){
-                venueObj = {
-                    venueInfo: venueInfo,
+            }).then(function (data) {
+                // venueObj = {
+                //     venueInfo: venueInfo,
+                //     reviews: data
+                // };
+                // console.log(venueObj);
+                reviewInfo = {
                     reviews: data
-                };
-                console.log(venueObj);
-                res.render("select", {venueObj: venueObj})
+                }
+                console.log("Review info: ", reviewInfo)
+                console.log("dataValues " + reviewInfo.dataValues)
+                console.log("reviewInfo " + reviewInfo.reviews[0]);
+                res.render("select", { venueInfo: venueInfo, reviewInfo: reviewInfo })
             });
-   });
-});
-
+        });
+    
 
    //post route to send reviews to database status: working =)
 
@@ -113,5 +181,5 @@ module.exports = function(app){
        });
    }); 
 
-};
-
+});
+}
