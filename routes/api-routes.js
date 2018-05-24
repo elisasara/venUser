@@ -9,15 +9,6 @@ module.exports = function (app) {
 
         });
     });
-    // app.get("/api/review/:id", function (req, res) {
-    //     db.Review.findOne({
-    //         where: {
-    //             venue_id: req.params.id
-    //         }
-    //     }).then(function (data) {
-    //         res.json(data);
-    //     });
-    // });
 
     app.post("/venuelist", function (req, res) {
         var city = req.body.city;
@@ -32,6 +23,7 @@ module.exports = function (app) {
                 client_id: process.env.fourSquare_API_client_id,
                 client_secret: process.env.fourSquare_API_client_secret,
                 near: city + "," + state,
+                categoryId: "4bf58dd8d48988d1e5931735", 
                 query: venue,
                 v: 20180515,
                 limit: 10
