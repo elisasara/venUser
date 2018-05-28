@@ -97,7 +97,7 @@ module.exports = function (app) {
                     };
                     // reviewArr.push(reviewsToShow[i]);
                     reviewArr.push(showReview);
-                    venueRating = (venueRating + rating)/(i + 1);
+                    venueRating = (venueRating + rating)/(reviewsToShow.length);
                     console.log("Star Array: ", stars);
                 };
                 console.log("Review Array: ", reviewArr);
