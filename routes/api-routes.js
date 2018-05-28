@@ -77,12 +77,12 @@ module.exports = function (app) {
                     var stars = [];
                     // for each star given, loop through and add "true" to the array
                     for (var j=0; j<rating; j++) {
-                        stars.push(true);
+                        stars.push({checked: true});
                     };
 
                     // for the remaining stars, loop through and add "false" to the array
                     for (var k=0; k<(5-rating); k++) {
-                        stars.push(false);
+                        stars.push({checked: false});
                     };
 
                     // create object for each review that will then be pushed into the reviewArr
