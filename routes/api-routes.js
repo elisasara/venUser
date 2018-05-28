@@ -72,9 +72,33 @@ module.exports = function (app) {
                 var reviewsToShow = JSON.parse(JSON.stringify(dbReview));
                 console.log(reviewsToShow);
                 for (var i=0; i<reviewsToShow.length; i++) {
-                    reviewArr.push(reviewsToShow[i]);
+                    // create an object that holds a key value pair for each star with a boolean value
                     var rating = reviewsToShow[i].rating_venue;
+                    var stars = [];
+                    // for each star given, loop through and add "true" to the array
+                    for (var j=0; j<rating; j++) {
+                        stars.push(true);
+                    };
+
+                    // for the remaining stars, loop through and add "false" to the array
+                    for (var k=0; k<(5-rating); k++) {
+                        stars.push(false);
+                    };
+
+                    // create object for each review that will then be pushed into the reviewArr
+                    // in creating the object, set up the logic for the number of filled in stars versus the number of empty stars
+                    var showReview = {
+                        name_author: reviewsToShow[i].name_author,
+                        category: reviewsToShow[i].category,
+                        content: reviewsToShow[i].content,
+                        rating_venue: rating,
+                        stars: stars,
+                        id: reviewsToShow[i].venue_id
+                    };
+                    // reviewArr.push(reviewsToShow[i]);
+                    reviewArr.push(showReview);
                     venueRating = (venueRating + rating)/(i + 1);
+                    console.log("Star Array: ", stars);
                 };
                 console.log("Review Array: ", reviewArr);
                 console.log("Average Rating: ", venueRating);
