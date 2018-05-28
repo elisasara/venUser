@@ -97,11 +97,12 @@ module.exports = function (app) {
                     };
                     // reviewArr.push(reviewsToShow[i]);
                     reviewArr.push(showReview);
-                    venueRating = (venueRating + rating)/(reviewsToShow.length);
+                    venueRating += rating;
                     console.log("Star Array: ", stars);
                 };
+                var avgRating = venueRating/reviewsToShow.length;
                 console.log("Review Array: ", reviewArr);
-                console.log("Average Rating: ", venueRating);
+                console.log("Average Rating: ", avgRating);
 
             request({
                 url: url,
@@ -134,7 +135,7 @@ module.exports = function (app) {
 
                 venueObj = {
                     venueInfo: venueInfo,
-                    venueRating: venueRating.toFixed(1),
+                    venueRating: avgRating.toFixed(1),
                     reviewObj: reviewArr
                 };
 
