@@ -68,12 +68,16 @@ module.exports = function (app) {
                 // loop through array of reviews and then parse and stringify each review to add to the overall array
                 // insert array into venueObj to be put into handlebars
                 var reviewArr = [];
+                var venueRating = 0;
                 var reviewsToShow = JSON.parse(JSON.stringify(dbReview));
                 console.log(reviewsToShow);
                 for (var i=0; i<reviewsToShow.length; i++) {
                     reviewArr.push(reviewsToShow[i]);
+                    var rating = reviewsToShow[i].rating_venue;
+                    venueRating = (venueRating + rating)/(i + 1);
                 };
                 console.log("Review Array: ", reviewArr);
+                console.log("Average Rating: ", venueRating);
 
             request({
                 url: url,
@@ -106,6 +110,7 @@ module.exports = function (app) {
 
                 venueObj = {
                     venueInfo: venueInfo,
+                    venueRating: venueRating.toFixed(1),
                     reviewObj: reviewArr
                 };
 
