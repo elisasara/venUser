@@ -33,13 +33,13 @@
     <div class="row">
         <div class="col-sm-6">
             <h1>{{venueObj.venueInfo.name}}</h1>
-            <br />
+            <h4>Rating: {{venueObj.venueRating}}</h4>
             <h4>
                 <a href="{{venueObj.venueInfo.url}}" target="blank">{{venueObj.venueInfo.url}}</a>
             </h4>
-            <h5>
+            <h4>
                 <a href="https://www.facebook.com/{{venueObj.venueInfo.facebook}}" target="blank">facebook.com/{{venueObj.venueInfo.facebook}}</a>
-            </h5>
+            </h4>
         </div>
         <div class="col-sm-6">
             <h4>Address:</h4>
@@ -60,8 +60,22 @@
                 <div class="row" id="reviewArea">
                     <div class="container">
                         <strong>{{this.name_author}}</strong>
-                        <br /> Rating: {{this.rating_venue}}
-                        <br /> {{this.category}}
+                        <br />
+                        <div>
+                            {{#each this.stars}} {{#if this.checked}} {{!--
+                            <span>1 </span> --}}
+                            <span>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            {{else}} {{!--
+                            <span>2 </span> --}}
+                            <span>
+                                <i class="far fa-star"></i>
+                            </span>
+                            {{/if}} {{/each}}
+                        </div>
+                        {{!--
+                        <br /> Rating: {{this.rating_venue}} --}} {{this.category}}
                         <br /> {{this.content}}
                     </div>
                 </div>
