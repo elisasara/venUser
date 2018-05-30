@@ -22,4 +22,6 @@ module.exports = {
   }
 };
 
+// process.env.MySQL_Database_Password
+
 //https://stackoverflow.com/questions/38757728/using-an-enviroment-variable-for-local-sequelize-configuration

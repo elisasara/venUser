@@ -9,8 +9,14 @@ describe("venUser", function() {
   it("should send user to main page", function(done) {
     // ID for the login button.
     Nightmare({ show: true })
-      .goto("https://obscure-chamber-89134.herokuapp.com/venues")
-      // Click the catalog link
+      .goto("https://obscure-chamber-89134.herokuapp.com")
+      // Enter city.
+      .type("#city", "Philadelphia")
+      // Enter state.
+      .type("#state", "PA")
+       // Enter venue.
+      .type("#venue", "UNION TRANSFER")
+      // Click the search submit button
       .click("#searchSubmit")
       // Evaluate the title
       .evaluate(function() {
@@ -18,7 +24,7 @@ describe("venUser", function() {
       })
       // is the title as expected?
       .then(function(title) {
-        expect(title).to.equal("venUser ");
+        expect(title).to.equal("venUser");
         done();
       });
   })})
