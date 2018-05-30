@@ -189,5 +189,64 @@ label  {
   
 }
 
+ .tab-content {
+     background-color: white;
+ }
 
+#reviewArea #writeReviewArea {
+    background-color: white;
+    color: black;
+ }
 
+ #venueInfoArea {
+     background-color: white;
+     margin-bottom: 15px;
+ }
+
+ #writeReviewArea {
+     padding-left: 5px;
+     padding-right: 5px;
+ }
+
+ #chooseVenueButton {
+     background-color: white;
+     border-color: white;
+     color: black;
+ }
+
+ #chooseVenueButton:hover {
+    color: blue;
+ }
+
+ #newSearchBar {
+     height: 100px;
+     margin-bottom: 10px;
+ }
+
+ #newSearchSubmit { 
+    width:70px;
+    height: 40px; 
+    margin-left: 15px; 
+    font-family: 'Amatic SC', cursive;
+    font-style: bold;
+    font-size: 16px;
+    text-decoration: center;
+ }
+
+ #newCity, #newState, #newVenue  {
+    font-family: 'Amatic SC', cursive;
+    font-style: bolder;
+    font-size: 14px;
+ }
+
+#newSearchTitle {
+    margin-right: 15px;
+}
+
+#selectedPageHeader {
+    color: white;
+    font-size: 150px;
+    font-family: 'Permanent Marker', cursive;
+    margin-top: 20px;
+    margin-bottom: 0px;
+ }
