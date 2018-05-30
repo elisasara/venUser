@@ -23,8 +23,10 @@ module.exports = function (callback) {
             url: "https://api.foursquare.com/v2/venues/search",
             method: "GET",
             qs: {
-                client_id: process.env.fourSquare_API_client_id,
+                client_id: process.env.fourSquare_API_client_id ,
+                // process.env.fourSquare_API_client_id,
                 client_secret: process.env.fourSquare_API_client_secret,
+                // process.env.fourSquare_API_client_secret,
                 near: city + ", " + state,
                 query: venueName,
                 v: 20180515,
