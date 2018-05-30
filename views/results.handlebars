@@ -6,60 +6,31 @@
             </h1>
         </div>
     </div>
-    <div class="d-flex justify-content-center text-black" id="searchBar">
-        <div class="card" id: "mainCard">
-            <div class="card-body">
-                <table class="table table-light"
-                    id="resultTable">
-                    <thead>
-                        </div>
-                        <tr>
-                            <th scope="col">Venue:</th>
-                            <th scope="col">Address:</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each venue}}
-                        <tr data-id={{this.id}}>
-                            <td>
-                                <form method="post" action="/venues/{{this.id}}">
-                                    <input type="hidden" name="venueid" value="{{this.id}}">
-                                    <button type="submit" name="submit_param" value="submit_value">
-                                        {{this.name}}
-                                    </button>
-                                </form>
-                                {{!--
-                                <a href="/venues/{{this.id}}">{{this.name}}</a> --}}
-                            </td>
-                            <td>{{this.address}}</td>
-                        </tr>
-                        {{/each}}
-                    </tbody>
-                </table>
-            </div>
-            </div>
+    <table class="table table-light">
+        <thead>
+            <tr>
+
+                <th scope="col">Venue:</th>
+                <th scope="col">Address:</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each venue}}
+            <tr data-id={{this.id}}>
+                <td>
+                    <form method="post" action="/venues/{{this.id}}">
+                        <input type="hidden" name="venueid" value="{{this.id}}">
+                        <button type="submit" name="submit_param" value="submit_value" id="chooseVenueButton">
+                            {{this.name}}
+                        </button>
+                    </form>
+                    {{!--
+                    <a href="/venues/{{this.id}}">{{this.name}}</a> --}}
+                </td>
+                <td>{{this.address}}
+                    <br />{{this.city}}, {{this.state}} {{this.zip}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
 </div>
-<table class="table table-light">
-    <thead>
-        <tr>
-            
-            <th scope="col">Venue:</th>
-            <th scope="col">Address:</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each venue}}
-        <tr data-id={{this.id}}>
-            <td><form method="post" action="/venues/{{this.id}}">
-                <input type="hidden" name="venueid" value="{{this.id}}">
-                <button type="submit" name="submit_param" value="submit_value" id="chooseVenueButton">
-                    {{this.name}}
-                </button>
-            </form>
-            {{!-- <a href="/venues/{{this.id}}">{{this.name}}</a> --}}
-            </td>
-            <td>{{this.address}}<br />{{this.city}}, {{this.state}} {{this.zip}}</td>
-        </tr>
-        {{/each}}
-    </tbody>
-</table>
