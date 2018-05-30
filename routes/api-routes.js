@@ -100,9 +100,16 @@ module.exports = function (app) {
                     venueRating += rating;
                     console.log("Star Array: ", stars);
                 };
-                var avgRating = venueRating/reviewsToShow.length;
+                var avgRating = (venueRating/reviewsToShow.length).toFixed(1);
+                var ratingToDisplay;
+                if (isNaN(avgRating)) {
+                    ratingToDisplay = "Not Yet Rated"
+                }
+                else {
+                    ratingToDisplay = avgRating;
+                }
                 console.log("Review Array: ", reviewArr);
-                console.log("Average Rating: ", avgRating);
+                console.log("Average Rating: ", ratingToDisplay);
 
             request({
                 url: url,
@@ -135,7 +142,7 @@ module.exports = function (app) {
 
                 venueObj = {
                     venueInfo: venueInfo,
-                    venueRating: avgRating.toFixed(1),
+                    venueRating: ratingToDisplay,
                     reviewObj: reviewArr
                 };
 
