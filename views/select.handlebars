@@ -21,7 +21,7 @@
                     <input type="search" class="form-control" name="state" id="newState">
                     <label for="venue">Venue:</label>
                     <input type="search" class="form-control" name="venue" id="newVenue">
-                    <input class="btn btn-secondary btn-lg" id="newSearchSubmit" type="submit">
+                    <input type="submit" class="btn btn-secondary btn-lg" id="newSearchSubmit">
                 </form>
             </div>
         </div>
@@ -37,9 +37,19 @@
             <h4>
                 <a href="{{venueObj.venueInfo.url}}" target="blank">{{venueObj.venueInfo.url}}</a>
             </h4>
+            {{#if venueObj.venueInfo.facebook}}
             <h4>
                 <a href="https://www.facebook.com/{{venueObj.venueInfo.facebook}}" target="blank">facebook.com/{{venueObj.venueInfo.facebook}}</a>
             </h4>
+            {{/if}} {{#if venueObj.venueInfo.twitter}}
+            <h4>
+                <a href="https://www.twitter.com/{{venueObj.venueInfo.twitter}}" target="blank">twitter.com/{{venueObj.venueInfo.twitter}}</a>
+            </h4>
+            {{/if}} {{#if venueObj.venueInfo.instagram}}
+            <h4>
+                <a href="https://www.instagram.com/{{venueObj.venueInfo.instagram}}" target="blank">facebook.com/{{venueObj.venueInfo.instagram}}</a>
+            </h4>
+            {{/if}}
         </div>
         <div class="col-sm-6">
             <h4>Address:</h4>
