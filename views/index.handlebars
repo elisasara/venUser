@@ -12,14 +12,18 @@
                 <h2 class="card-title">
                     <strong>Search Location (City, State, Venue)</strong></h2>
 
-                <form class="form-inline" action="/venuelist" method="post">
+                <form class="form-inline" autocomplete="off" action="/venuelist" method="post">
+                    <div class="autocomplete form-inline" style="width:300px;">
                     <label for="city">City:</label>
                     <input type="search" class="form-control" name="city" id="city">
+                    </div>
+                    <div class="autocomplete form-inline" style="width:300px;">
                     <label for="state">State:</label>
                     <input type="search" class="form-control" name="state" id="state">
+                    </div>
                     <label for="venue">Venue:</label>
                     <input type="search" class="form-control" name="venue" id="venue">
-                    <button type="submit" class="btn btn-secondary btn-lg" id="searchSubmit" 
+                    <button type="submit" class="btn btn-secondary btn-lg" id="newSearchSubmit" 
                     type="submit">
                     <strong>SUBMIT SEARCH</strong>
                         </button>
@@ -30,3 +34,5 @@
         </div>
     </div>
 </div>
+
+<script src="../js/form.js" type="text/javascript"></script>
