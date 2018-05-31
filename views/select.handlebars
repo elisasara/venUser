@@ -1,83 +1,87 @@
 <div class="container-fluid" id="mainBody">
     <div class="jumbotron text-center bg-dark text-white" id="mainPageHeader">
         <div class="container">
-            <h1 class="display-3" id="mainPageHeaderFont">
+            <h1 class="display-4" id="mainPageHeaderFont">
                 <strong>...venUser ..</strong>
             </h1>
         </div>
     </div>
 </div>
 
+
 <!-- SELECTED VENUE DISPLAY -->
-<div class="row">
-    <div class="col-sm-6">
-        <h2>{{venueObj.venueInfo.name}}</h2>
+<div class="container" id="venueInfoArea">
+    <div class="row" <div class="col-sm-6">
+        <h1>{{venueObj.venueInfo.name}}</h1>
+        <h4>Rating: {{venueObj.venueRating}}</h4>
     </div>
     <div class="col-sm-6">
         <h4>Address:</h4>
     </div>
 
-</div>
-<br>
-<div class="row">
-    <div class="col-sm-6">
-        <h4>
-            <a href="{{venueObj.venueInfo.url}}"></a>
-        </h4>
-    </div>
-
-    <div class="col-sm-6">
-        <h4>{{venueObj.venueInfo.address}}</h4>
-    <br>
     <div class="row">
         <div class="col-sm-6">
             <h4>
-                <a href="{{venueObj.venueInfo.url}}">{{venueObj.venueInfo.url}}</a>
+                <a href="{{venueObj.venueInfo.url}}" target="blank">
+                </a>
             </h4>
         </div>
+
         <div class="col-sm-6">
             <h4>{{venueObj.venueInfo.address}}</h4>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>{{venueObj.venueInfo.name}}</h1>
+                    <h4>Rating: {{venueObj.venueRating}}</h4>
+                    <h4>
+                        <a href="{{venueObj.venueInfo.url}}">{{venueObj.venueInfo.url}}</a>
+                    </h4>
+                </div>
+                <div class="col-sm-6">
+                    <h4>{{venueObj.venueInfo.address}}</h4>
+                    <h4>{{venueObj.venueInfo.city}}, {{venueObj.venueInfo.state}} {{venueObj.venueInfo.zip}}</h4>
+                </div>
+
+            </div>
         </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+                <h4>
+                    <a href="{{venueObj.venueInfo.facebook}}">{{venueObj.venueInfo.facebook}}</a>
+                </h4>
+            </div>
 
-    </div>
-</div>
-<br>
-<br>
-<div class="row">
-    <div class="col-sm-4">
-        <h5>
-            <a href="{{venueObj.venueInfo.facebook}}">{{venueObj.venueInfo.facebook}}</a>
-        </h5>
-    </div>
+            <div class="col-sm-4">
+                <h5>
+                    <a href="{{venueObj.venueInfo.twitter}}">{{venueObj.venueInfo.twitter}}</a>
+                </h5>
+            </div>
+            <div class="col-sm-4">
+                <h5>
+                    <a href="{{venueObj.venueInfo.instagram}}">{{venueObj.venueInfo.instagram}}</a>
+                </h5>
+            </div>
+        </div>
+        <br>
+        <br>
 
-    <div class="col-sm-4">
-        <h5>
-            <a href="{{venueObj.venueInfo.twitter}}">{{venueObj.venueInfo.twitter}}</a>
-        </h5>
+        <!-- REVIEW/TIP DISPLAY -->
+        {{#each venuObj.review}}
+        <div class="row text-center" id="reviewHeader">
+            <div class="col-sm-12">
+                <h2>Add a Review:</h2>
+            </div>
+        </div>
+        <br>
+        <div class="row" id="reviewArea"></div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3">
+            <a href="{{venueObj.review.name_author}}"></a>
+        </div>
+        <div class="col-sm-3">{{venueObj.review.content}} </div>
+        <div class="col-sm-3"></div>
+        {{/each}}
     </div>
-    <div class="col-sm-4">
-        <h5>
-            <a href="{{venueObj.venueInfo.instagram}}">{{venueObj.venueInfo.instagram}}</a>
-        </h5>
-    </div>
-</div>
-<br>
-<br>
-
-<!-- REVIEW/TIP DISPLAY -->
-{{#each venuObj.review}}
-<div class="row text-center" id="reviewHeader">
-    <div class="col-sm-12">
-        <h2>Add a Review:</h2>
-    </div>
-</div>
-<br>
-<div class="row" id="reviewArea"></div>
-<div class="col-sm-3"></div>
-<div class="col-sm-3">
-    <a href="{{venueObj.review.name_author}}"></a>
-</div>
-<div class="col-sm-3">{{venueObj.review.content}} </div>
-<div class="col-sm-3"></div>
-{{/each}}
-</div>
