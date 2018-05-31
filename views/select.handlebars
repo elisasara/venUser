@@ -1,7 +1,7 @@
 <div class="container-fluid" id="mainBody">
     <div class="jumbotron text-center bg-dark text-white" id="selectedPageHeader">
         <div class="container">
-            <h1 class="display-3" id="mainPageHeaderFont">
+            <h1 class="display-4" id="mainPageHeaderFont">
                 <strong>...venUser ..</strong>
             </h1>
         </div>
@@ -63,6 +63,14 @@
 </div>
 <!-- SELECTED VENUE DISPLAY -->
 <div class="container" id="venueInfoArea">
+    <div class="row" <div class="col-sm-6">
+        <h1>{{venueObj.venueInfo.name}}</h1>
+        <h4>Rating: {{venueObj.venueRating}}</h4>
+    </div>
+    <div class="col-sm-6">
+        <h4>Address:</h4>
+    </div>
+
     <div class="row">
         <div class="col-sm-6">
             <h1>{{venueObj.venueInfo.name}}</h1>
@@ -88,6 +96,7 @@
             </h4>
             {{/if}}
         </div>
+
         <div class="col-sm-6">
             <h4>Address:</h4>
             <h4>{{venueObj.venueInfo.address}}</h4>
