@@ -14,7 +14,6 @@ module.exports = function (app) {
         var city = req.body.city;
         var state = req.body.state;
         var venue = req.body.venue;
-        console.log(city + " ," + state + " ," + venue);
         var searchResults = [];
         request({
             url: "https://api.foursquare.com/v2/venues/search",
@@ -31,7 +30,6 @@ module.exports = function (app) {
             if (err) {
                 console.log(err);
             }
-            // console.log(response);
             var venues = JSON.parse(body);
             var venueInfo = venues.response.venues;
 
@@ -48,8 +46,6 @@ module.exports = function (app) {
                 // push each object into the array
                 searchResults.push(eachResult);
             };
-            console.log(searchResults);
-            console.log(searchResults.length);
             res.render("results", { venue: searchResults });
         });
     });
@@ -70,7 +66,6 @@ module.exports = function (app) {
                 var reviewArr = [];
                 var venueRating = 0;
                 var reviewsToShow = JSON.parse(JSON.stringify(dbReview));
-                console.log(reviewsToShow);
                 for (var i=0; i<reviewsToShow.length; i++) {
                     // create an object that holds a key value pair for each star with a boolean value
                     var rating = reviewsToShow[i].rating_venue;
@@ -86,7 +81,6 @@ module.exports = function (app) {
                     };
 
                     // create object for each review that will then be pushed into the reviewArr
-                    // in creating the object, set up the logic for the number of filled in stars versus the number of empty stars
                     var showReview = {
                         name_author: reviewsToShow[i].name_author,
                         category: reviewsToShow[i].category,
@@ -95,10 +89,8 @@ module.exports = function (app) {
                         stars: stars,
                         id: reviewsToShow[i].venue_id
                     };
-                    // reviewArr.push(reviewsToShow[i]);
                     reviewArr.push(showReview);
                     venueRating += rating;
-                    console.log("Star Array: ", stars);
                 };
                 var avgRating = (venueRating/reviewsToShow.length).toFixed(1);
                 var ratingToDisplay;
@@ -108,8 +100,6 @@ module.exports = function (app) {
                 else {
                     ratingToDisplay = avgRating;
                 }
-                console.log("Review Array: ", reviewArr);
-                console.log("Average Rating: ", ratingToDisplay);
 
             request({
                 url: url,
@@ -123,7 +113,7 @@ module.exports = function (app) {
                 if (err) {
                     console.log(err);
                 }
-                // console.log(JSON.parse(body));
+
                 var result = JSON.parse(body);
                 venueInfo = {
                     id: result.response.venue.id,
@@ -138,17 +128,13 @@ module.exports = function (app) {
                     instagram: result.response.venue.contact.instagram
                 };
 
-                console.log("venue Info:", venueInfo);
-
                 venueObj = {
                     venueInfo: venueInfo,
                     venueRating: ratingToDisplay,
                     reviewObj: reviewArr
                 };
 
-                    console.log("Whole Object: ", venueObj);
                     res.render("select", { venueObj: venueObj})
-                    // res.render("select", {venueInfo: venueInfo});
                 });
        });
     });
