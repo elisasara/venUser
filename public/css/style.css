@@ -23,6 +23,10 @@
 
  }
 
+ 
+ 
+    
+
  #mainPageHeaderFont {
     color: white;
     font-size: 9.375rem;
@@ -47,6 +51,13 @@
     /* margin-left: 230px; */
 
  }
+
+ #selectedPageHeader  {
+    color: white;
+    font-size: 9.375rem;
+    font-family: 'Permanent Marker', cursive; 
+    margin-top: 20px;   
+ }
   
 th {
 
@@ -66,6 +77,18 @@ th {
  
 }
 
+#newSearchBar  {
+    height:200px;
+
+}
+
+#newSearchTitle  {
+    font-size: 4.5rem;
+     text-align: center;
+}
+
+
+
 label  {
     font-family: 'Amatic SC', cursive;
     font-style: bold;
@@ -74,6 +97,16 @@ label  {
 
 }
  #searchSubmit { 
+    width:200px;
+    height: 55px; 
+    margin-left: 15px;  
+    font-family: 'Amatic SC', cursive;
+    font-style: bold;
+    font-size: 2rem;
+    text-decoration: center;
+ }
+
+ #newSearchSubmit { 
     width:200px;
     height: 55px; 
     margin-left: 15px;  
@@ -104,15 +137,25 @@ label  {
  a  {
     font-family: 'Amatic SC', cursive;
     font-style: bold;
-    font-size: 30px;
+    font-size: 1.33rem;
     text-decoration: center;
     color: black;
 
  }
 
+ #venueInfoArea  {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    font-family: 'Amatic SC', cursive;
+    font-style: bold;
+
+ }
+
+
  #selectedVenuename, #selectedVenueAddress, #selectedVenueInstagram, #selectedVenueTwitter, #selectedVenueFacebook,
  #selectedVenueUrl, #Address  {
-     width: 45px;
+     width: 100%;
      background-color: white;
      border-top: 10px, color, black;
      border-right: 10px, color, black;
@@ -149,12 +192,29 @@ label  {
         font-style: bolder; 
         
      }   
+
+     .card.centered {
+
+        height: 100%;
+        width: 100%;
+     }
      
      #mainPageHeader {
 
         margin-top: 15px;
      }   
-      
+     #selectedPageHeader  {
+        color: white;
+        font-size: 3rem;
+        font-family: 'Permanent Marker', cursive; 
+           
+     } 
+     #newSearchTitle {
+        font-size: 1.75rem;
+        font-family: 'Amatic SC', cursive;
+        font-style: bolder; 
+
+     }
      #mainCard   {
          height: 240%;
          width: 100%;
@@ -166,7 +226,19 @@ label  {
          height: 240%;
          width: 100%;
      }
+     #venueForm  {
 
+        font-size: 1.75rem;
+        font-family: 'Amatic SC', cursive;
+        font-style: bolder; 
+     }   
+
+
+
+
+ 
+
+     
      label  {
         font-family: 'Amatic SC', cursive;
         font-style: bold;
@@ -179,7 +251,11 @@ label  {
         margin-top: 5%;
 
     }
+    #newSearchSubmit {
+        margin-left: 15%;
+        margin-top: 5%;
 
+    }
     #resultTable  {
 
         width: 90%;
