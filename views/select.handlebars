@@ -8,7 +8,59 @@
     </div>
 </div>
 
+    {{!-- <div class="d-flex justify-content-center text-black" id="newSearchBar">
+        <div class="card" id="mainCard">
+            <div class="card-body">
+    
+                <form class="form-inline justify-content-center" autocomplete="off" action="/venuelist" method="post">
+                    <div class="autocomplete form-inline" style="width:300px;">
+                        <label for="city">City:</label>
+                        <input type="search" class="form-control" name="city" id="city">
+                    </div>
+                    <div class="autocomplete form-inline" style="width:300px;">
+                        <label for="state">State:</label>
+                        <input type="search" class="form-control" name="state" id="state">
+                    </div>
+                    <label for="venue">Venue:</label>
+                    <input type="search" class="form-control" name="venue" id="venue">
+                    <button type="submit" class="btn btn-secondary btn-lg" id="newSearchBar" type="submit">
+                        <strong>SUBMIT SEARCH</strong>
+                    </button>
+                </form>
+    
+            </div>
+        </div>
+    </div>
+    --}}
+<div class ="container">
+    <div class="d-flex justify-content-center text-black" id="newSearchBar">
+        <div class="card" id="mainCard">
+            <div class="card-body center">
+                <form class="form-inline justify-content-center"  autocomplete="off" action="/venuelist" method="post">
+                    <h3 id="newSearchTitle">
+                        <strong>Search New Venue</strong>
+                    </h3>
+                    <div class="autocomplete form-inline" style="width:300px;">
+                    <label for="city">City:</label>
+                    <input type="search"  style ="font-size: 14px;" class="form-control" name="city" id="city">
+                    </div>
+                    <div class="autocomplete form-inline newCity" style="width:300px;">
+                    <label for="state">State:</label>
+                    <input type="search" style ="font-size: 14px;"class="form-control newState" name="state" id="state">
+                    </div>
+                
+                    <label for="venue">Venue:</label>
+                    <input type="search" class="form-control" name="venue" id="newVenue">
+                    <button type="submit" class="btn btn-secondary btn-lg" id="newSearchSubmit" type="submit">
+                        <strong>SUBMIT</strong>
+                    </button>
+                   
+                </form>
+            </div>
+        </div>
+    </div>
 
+</div>
 <!-- SELECTED VENUE DISPLAY -->
 <div class="container" id="venueInfoArea">
     <div class="row" <div class="col-sm-6">
@@ -121,7 +173,7 @@
         </div>
     </div>
 </div>
-</div>
+
 
 {{!--
 <div class="container" id="overallReviewArea">
