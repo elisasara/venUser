@@ -7,13 +7,26 @@ $(document).ready(function () {
     var VenueRatingInput = $("#rating_venue_fm");
     var VenueForm = $("#venueForm");
                              
-    $(VenueForm).on("submit", handleFormSubmit);       
+    $(VenueForm).on("submit", handleFormSubmit);  
+    
+    // var url = window.location.search;
+
+    // var venueId;
+
+    // if (url.indexOf("?/venues/") !== -1) {
+    //   venueId = url.split("/")[1];
+    //     getReviewData(venueID);
+    // }
+
+    // function getReviewData
     
     function handleFormSubmit(event) {
         event.preventDefault();
 
-        if (!VenueIdInput.val().trim() || !AuthorNameInput.val().trim() || !CategoryInput.val().trim() || !VenueRatingInput.val().trim()) {
-          return;
+        // if (!VenueIdInput.val().trim() || !AuthorNameInput.val().trim() || !CategoryInput.val().trim() || !VenueRatingInput.val().trim()) {
+            if (!AuthorNameInput.val().trim() || !CategoryInput.val().trim() || !VenueRatingInput.val().trim()) {
+  
+        return;
         }
         var newReveiw = {
             name_author: AuthorNameInput.val().trim(),
@@ -24,11 +37,13 @@ $(document).ready(function () {
 
         };
         submitPost(newReveiw);
+        
     };
     function submitPost(post) {
         $.post("/api/reviews", post, function () {
-            window.location.href = "/form";
+            location.reload();
         });
-    }
+    };
 
+    
 });
