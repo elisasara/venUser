@@ -59,6 +59,7 @@ module.exports = function (app) {
                 where: {
                     venue_id: venueId
                 }
+                // ADD SORTING IN HERE!!
             }).then(function(dbReview){
 
                 // loop through array of reviews and then parse and stringify each review to add to the overall array
