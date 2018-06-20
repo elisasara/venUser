@@ -10,3 +10,5 @@ Each page provides you with:
 
 ### Make your own reviews!
 No validation required. venUser is quick, simple, and easy for everyone to use.
+
+### Check out the deployed version on Heroku: https://salty-caverns-68398.herokuapp.com/
