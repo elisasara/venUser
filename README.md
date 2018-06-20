@@ -12,3 +12,14 @@ Each page provides you with:
 No validation required. venUser is quick, simple, and easy for everyone to use.
 
 ### Check out the deployed version on Heroku: https://obscure-chamber-89134.herokuapp.com/
+
+### This app utilizes:
+* Express JS
+* Node JS
+* MySQL
+* Sequelize
+* Javascript
+* JQuery
+* HTML/CSS
+* Bootstrap 4
+* Handlebars
