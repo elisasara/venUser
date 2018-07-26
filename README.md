@@ -16,7 +16,7 @@ Each page provides you with:
 No validation required. venUser is quick, simple, and easy for everyone to use.
 ![form](/public/images/venUserReview.png)
 
-This app utilizes:
+### This app utilizes:
 * Express JS
 * Node JS
 * MySQL
